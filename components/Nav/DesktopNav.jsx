@@ -43,6 +43,10 @@ import DesktopSubNav from './DesktopSubNav';
       href: '#',
     },
     {
+      label: 'Projects',
+      href: '/',
+    },
+    {
       label: 'About',
       href: '/about',
     },

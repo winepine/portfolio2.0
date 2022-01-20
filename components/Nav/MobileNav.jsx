@@ -38,6 +38,10 @@ import MobileNavItem from './MobileNavItem';
       href: '#',
     },
     {
+      label: 'Projects',
+      href: '/',
+    },
+    {
       label: 'About',
       href: '/about',
     },
