@@ -7,14 +7,18 @@ import {
     Collapse,
     useColorModeValue,
     useDisclosure,
+    useColorMode
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
     CloseIcon,
+    SunIcon,
+    MoonIcon
   } from '@chakra-ui/icons';
 import MobileNav from './MobileNav';
 import DesktopNav from './DesktopNav';
   export default function WithSubnavigation() {
+    const { colorMode, toggleColorMode } = useColorMode()
     const { isOpen, onToggle } = useDisclosure();
     return (
       <Box position="fixed" minWidth="100vw">
@@ -44,7 +48,7 @@ import DesktopNav from './DesktopNav';
           <Flex 
     pl={3}
           
-           flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+           flex={{ base: 2 }} justify={{ base: 'center', md: 'start' }}>
             <Text
             textAlign={{ base: 'center', md: 'left' }}
               fontFamily="'Poppins', sans-serif"
@@ -61,8 +65,11 @@ import DesktopNav from './DesktopNav';
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
-            spacing={6}>
+            spacing={0}>
           </Stack>
+          <IconButton 
+            ml={{ base: '-10vw' }}
+          onClick={toggleColorMode} icon={colorMode === 'light'? <MoonIcon w={5} h={5} />:<SunIcon w={5} h={5} />} />
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>

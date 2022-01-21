@@ -1,5 +1,5 @@
     import Nav from "../components/Nav/Nav"
-    import { Text,Button,Flex,Box,Image,keyframes,usePrefersReducedMotion, } from "@chakra-ui/react"
+    import { Text,Button,Flex,Box,Image,keyframes,usePrefersReducedMotion,useColorModeValue } from "@chakra-ui/react"
     import Typewriter from "typewriter-effect"
     import  { useState, useEffect } from 'react';
     import { useSpring, animated, config } from 'react-spring';
@@ -11,7 +11,6 @@ import Head from "next/head";
 `
     const Home = ()=> {
       const prefersReducedMotion = usePrefersReducedMotion()
-
   const animation = prefersReducedMotion
     ? undefined
     : `${spin} infinite 20s linear`
@@ -33,7 +32,7 @@ import Head from "next/head";
       useEffect(() => {
         setActive(2);
       }, []);
-      const { x } = useSpring({ config: { duration: 4000 }, x: active});
+      const { x } = useSpring({ config: { duration: 3500 }, x: active});
     // const animationProps = useSpring({
     //     anim1:p1[activeIndex]
     // })
@@ -43,11 +42,11 @@ import Head from "next/head";
       <Head><title>Basit Saeed</title>
       <link rel="icon" href="/logo.svg" type="image/icon type"/>
       </Head>
-  <Image animation={animation} ml="30vw" position='fixed'  opacity='1'zIndex='-1' width="40vw" mt='20vh' display={{base:'block',lg:'none'}}  src="/icon2.png"></Image>
+  {/* <Image animation={animation} ml="30vw" position='fixed'  opacity='1'zIndex='-1' width="40vw" mt='20vh' display={{base:'block',md:'none'}}  src="/icon2.png"></Image> */}
     <Nav />
-                        <Box position='absolute' zIndex='-1' mt='20vh' ml={{base:"-10vw",lg:'35vw'}} display={{base:"none",lg:"block"}}>
+      <Box position='absolute' zIndex='-1' mt={{base:'0',lg:'20vh'}} ml={{base:"20%",lg:'35vw'}} display={{base:"block  ",lg:"block"}}>
 
-<svg id="visual" viewBox="0 0 900 600" width="50vw" height="600" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1"><g transform="translate(484.2636526841101 334.18650624138996)">
+<svg id="visual" viewBox="0 0 900 600" width="60vw" height="600" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1"><g transform="translate(484.2636526841101 334.18650624138996)">
 <animated.path d={x.to({
             range: [0, 2],
             output: [
@@ -64,9 +63,9 @@ import Head from "next/head";
 }
             
 
-            <Box bg={{base:'rgba(0,0,0,0.5)',lg:"none"}} minH='100vh'>
-            <Text textShadow='2px 2px #000000' fontSize={{base:'5xl',lg:"8xl"}} textAlign={{base:'center',lg:"left"}} pt={{base:"25rem",lg:"18rem"}} ml={{base:"0",lg:"10vw"}} fontFamily='Poppins' fontWeight='800'>BASIT SAEED</Text>
-            <Text textShadow='1px 1px #000000' fontSize={{base:'2xl',lg:"5xl"}} textAlign={{base:'center',lg:"left"}} ml={{base:"0",lg:"10vw"}} fontFamily='Poppins' fontWeight='500'>
+            <Box minH='100vh'>
+            <Text textShadow={useColorModeValue(0,'2px 2px #000000')}  fontSize={{base:'5xl',lg:"8xl"}} textAlign={{base:'center',lg:"left"}} pt={{base:"25rem",lg:"18rem"}} ml={{base:"0",lg:"10vw"}} fontFamily='Poppins' fontWeight='800'>BASIT SAEED</Text>
+            <Text textShadow={{base:"0",md:'1px 1px #000000'}} fontSize={{base:'xl',lg:"5xl"}} textAlign={{base:'center',lg:"left"}} ml={{base:"0",lg:"10vw"}} fontFamily='Poppins' fontWeight='500'>
             <Typewriter
             options={{
                 "delay":"50",
@@ -85,7 +84,7 @@ import Head from "next/head";
             />
                 </Text>
                 <Flex direction={{base:'column',lg:"row"}}>
-                    <Button _hover={{"color":"pink.400","bg":"gray.700"}} bg='pink.500' ml={{base:'4vw',lg:"10vw"}}  w={{base:"90vw",lg:"18vw"}} mt='2vh'>Learn More About Skills</Button>
+                    <Button _hover={{"color":"pink.400","bg":"gray.700"}} bg={useColorModeValue('rgba(233,30,99,0.8)','pink.500')} ml={{base:'4vw',lg:"10vw"}}  w={{base:"90vw",lg:"18vw"}} mt='2vh'>Learn More About Skills</Button>
                     <Button bg={{base:'rgba(110,110,110,0.6)',lg:"rgba(110,110,110,0.2)"}} ml={{base:'4vw',lg:"1vw"}} w={{base:"90vw",lg:"15vw"}} mt='2vh'>Contact Me</Button>
                 </Flex>
             </Box>
