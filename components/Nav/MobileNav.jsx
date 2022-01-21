@@ -12,6 +12,11 @@ import MobileNavItem from './MobileNavItem';
       label: 'Skills',
       children: [
         {
+          label: 'All Technologies',
+          subLabel: 'Languages/Tools/Technologies',
+          href: '#',
+        },
+        {
           label: 'Web Frontend',
           subLabel: 'Frontend technologies',
           href: '#',
@@ -22,13 +27,8 @@ import MobileNavItem from './MobileNavItem';
           href: '#',
         },
         {
-          label: 'Databases',
-          subLabel: 'Databases ive Worked In',
-          href: '#',
-        },
-        {
-          label: 'Cloud & Infrastructure',
-          subLabel: 'Cloud services & Deployment',
+          label: 'Database & Cloud',
+          subLabel: 'Databases and deployment technologies',
           href: '#',
         },
       ],

@@ -1,10 +1,19 @@
     import Nav from "../components/Nav/Nav"
-    import { Text,Button,Flex,Box } from "@chakra-ui/react"
+    import { Text,Button,Flex,Box,Image,keyframes,usePrefersReducedMotion, } from "@chakra-ui/react"
     import Typewriter from "typewriter-effect"
     import  { useState, useEffect } from 'react';
     import { useSpring, animated, config } from 'react-spring';
-    const Home = ()=> {
     
+    const spin = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`
+    const Home = ()=> {
+      const prefersReducedMotion = usePrefersReducedMotion()
+
+  const animation = prefersReducedMotion
+    ? undefined
+    : `${spin} infinite 20s linear`
     const [active,setActive]=useState(0);
     useEffect(() => {
         const id = setTimeout(() => {
@@ -30,9 +39,11 @@
     return(<Box minH='100vh'
     // bgImage="url('/l1.svg')" bgSize='cover' minH='100vh' bgRepeat='no-repeat'
     >
+  <Image animation={animation} ml="30vw" position='fixed'  opacity='1'zIndex='-1' width="40vw" mt='20vh' display={{base:'block',lg:'none'}}  src="/icon2.png"></Image>
+    <Nav />
                         <Box position='absolute' zIndex='-1' mt='20vh' ml={{base:"-10vw",lg:'25vw'}} display={{base:"none",lg:"block"}}>
 
-<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1"><g transform="translate(484.2636526841101 334.18650624138996)">
+<svg id="visual" viewBox="0 0 900 600" width="50vw" height="600" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1"><g transform="translate(484.2636526841101 334.18650624138996)">
 <animated.path d={x.to({
             range: [0, 2],
             output: [
@@ -42,12 +53,16 @@
             ],})} fill="#E91E63"/>
 </g></svg>
 </Box>
+  
+{/* <Image animation={animation} ml={{base:"20vw",lg:"80vw"}} position='fixed'  opacity={{base:'1',lg:"0.7"}} zIndex='-1' width={{base:"20vw",lg:"10vw"}}  zIndex='-1' mt={{base:'40vh',lg:"60vh"}}  src="/icon2.png"></Image> */}
+
+{// mx={{base:"20vw",lg:"0"}} ml={{lg:"75vw"}} transform={{base:"translateY(-70vh)",lg:'translateY(-30vh)'}} 
+}
             
 
             <Box bg={{base:'rgba(0,0,0,0.5)',lg:"none"}} minH='100vh'>
-            <Nav />
-            <Text fontSize={{base:'5xl',lg:"8xl"}} textAlign={{base:'center',lg:"left"}} pt={{base:"25rem",lg:"18rem"}} ml={{base:"0",lg:"4vw"}} fontFamily='Poppins' fontWeight='800'>BASIT SAEED</Text>
-            <Text fontSize={{base:'2xl',lg:"5xl"}} textAlign={{base:'center',lg:"left"}} ml={{base:"0",lg:"4vw"}} fontFamily='Poppins' fontWeight='500'>
+            <Text textShadow='2px 2px #000000' fontSize={{base:'5xl',lg:"8xl"}} textAlign={{base:'center',lg:"left"}} pt={{base:"25rem",lg:"18rem"}} ml={{base:"0",lg:"4vw"}} fontFamily='Poppins' fontWeight='800'>BASIT SAEED</Text>
+            <Text textShadow='1px 1px #000000' fontSize={{base:'2xl',lg:"5xl"}} textAlign={{base:'center',lg:"left"}} ml={{base:"0",lg:"4vw"}} fontFamily='Poppins' fontWeight='500'>
             <Typewriter
             options={{
                 "delay":"50",
@@ -69,7 +84,6 @@
                     <Button _hover={{"color":"pink.400","bg":"gray.700"}} bg='pink.500' ml='4vw'  w={{base:"90vw",lg:"18vw"}} mt='2vh'>Learn More About Skills</Button>
                     <Button bg={{base:'rgba(110,110,110,0.6)',lg:"rgba(110,110,110,0.2)"}} ml={{base:'4vw',lg:"1vw"}} w={{base:"90vw",lg:"15vw"}} mt='2vh'>Contact Me</Button>
                 </Flex>
-
             </Box>
         </Box>)}
     export default Home;

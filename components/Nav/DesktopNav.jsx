@@ -17,6 +17,11 @@ import DesktopSubNav from './DesktopSubNav';
       label: 'Skills',
       children: [
         {
+          label: 'All Technologies',
+          subLabel: 'Languages/Tools/Technologies',
+          href: '#',
+        },
+        {
           label: 'Web Frontend',
           subLabel: 'Frontend technologies',
           href: '#',
@@ -27,13 +32,8 @@ import DesktopSubNav from './DesktopSubNav';
           href: '#',
         },
         {
-          label: 'Databases',
-          subLabel: 'Databases ive Worked In',
-          href: '#',
-        },
-        {
-          label: 'Cloud & Infrastructure',
-          subLabel: 'Cloud & Deployment',
+          label: 'Database & Cloud',
+          subLabel: 'Databases and deployment technologies',
           href: '#',
         },
       ],
