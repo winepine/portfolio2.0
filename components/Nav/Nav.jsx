@@ -52,6 +52,7 @@ export default React.memo(function WithSubnavigation() {
           justify={{ base: "center", md: "start" }}
         >
           <Text
+            mt={{ base: "0", md: 2 }}
             textAlign={{ base: "center", md: "left" }}
             fontFamily="'Poppins', sans-serif"
             color={useColorModeValue("gray.800", "white")}
@@ -84,7 +85,7 @@ export default React.memo(function WithSubnavigation() {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav ToggleHam={onToggle} />
       </Collapse>
     </Box>
   );

@@ -4,23 +4,30 @@ import {
   Text,
   Stack,
   Icon,
+  Button,
+  Link,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import Link from "next/link";
+import Router from "next/router";
+// import Link from "next/link";
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
-    <Link
-      href={href}
+    <Flex
+      bg="transparent"
       role={"group"}
+      as={Button}
+      onClick={() => Router.replace(href)}
       display={"block"}
-      p={2}
+      p={3}
+      size="9xl"
       rounded={"md"}
       _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
     >
-      <Stack direction={"row"} align={"center"}>
+      <Stack direction={"row"} align={"left"}>
         <Box>
           <Text
+            textAlign="left"
             transition={"all .3s ease"}
             _groupHover={{ color: "pink.400" }}
             fontWeight={500}
@@ -33,7 +40,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           transition={"all .3s ease"}
           transform={"translateX(-10px)"}
           opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+          _groupHover={{ opacity: "100%", transform: "translateX(10px)" }}
           justify={"flex-end"}
           align={"center"}
           flex={1}
@@ -41,7 +48,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
-    </Link>
+    </Flex>
   );
 };
 export default DesktopSubNav;

@@ -38,7 +38,9 @@ function MyApp({ Component, pageProps, router }) {
         </motion.div>
       </AnimatePresence> */}
       <Layout>
-        <Component {...pageProps} />
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
       </Layout>
     </ChakraProvider>
   );

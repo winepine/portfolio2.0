@@ -5,8 +5,11 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
+  Flex,
+  Button,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import Router from "next/router";
 import DesktopSubNav from "./DesktopSubNav";
 const NAV_ITEMS = [
   {
@@ -19,22 +22,22 @@ const NAV_ITEMS = [
       {
         label: "All Technologies",
         subLabel: "Languages/Tools/Technologies",
-        href: "#",
+        href: "/skills/all",
       },
       {
         label: "Web Frontend",
         subLabel: "Frontend technologies",
-        href: "#",
+        href: "/skills/frontend",
       },
       {
         label: "Web Backend",
         subLabel: "Backend technologies",
-        href: "#",
+        href: "/skills/backend",
       },
       {
         label: "Database & Cloud",
         subLabel: "Databases and deployment technologies",
-        href: "#",
+        href: "/skills/dbnc",
       },
     ],
   },
@@ -57,24 +60,28 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={8}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
+          <Popover trigger={"hover"} placement={"auto"}>
             <PopoverTrigger>
-              <Link
-                p={2}
+              <Flex
                 href={navItem.href ?? "#"}
+                p={2}
+                as={Button}
+                bg="transparent"
+                onClick={() => Router.replace(navItem.href ?? "#")}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
                   color: linkHoverColor,
+                  bg: "transparent",
                 }}
               >
                 {navItem.label}
-              </Link>
+              </Flex>
             </PopoverTrigger>
 
             {navItem.children && (
