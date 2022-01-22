@@ -2,14 +2,12 @@ import {
   Flex,
   Text,
   Stack,
-  Box,
   Collapse,
   Icon,
   useColorModeValue,
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Router from "next/router";
 const MobileNavItem = ({ label, children, href, ToggleHam }) => {
@@ -65,6 +63,7 @@ const MobileNavItem = ({ label, children, href, ToggleHam }) => {
                 py={2}
                 as={Button}
                 w="100%"
+                key={child.label}
                 bg="transparent"
                 onClick={() => {
                   if (child.href) {
@@ -72,7 +71,6 @@ const MobileNavItem = ({ label, children, href, ToggleHam }) => {
                     Router.replace(child.href);
                   }
                 }}
-                // href={href ?? '#'}
                 justify={"space-between"}
                 align={"center"}
                 _hover={{
@@ -80,16 +78,8 @@ const MobileNavItem = ({ label, children, href, ToggleHam }) => {
                   bg: "transparent",
                 }}
               >
-                <Text
-                  fontWeight={600}
-                  color={useColorModeValue("gray.600", "gray.200")}
-                >
-                  {child.label}
-                </Text>
+                <Text fontWeight={600}>{child.label}</Text>
               </Flex>
-              // <Link as={Button} key={child.label} href={child.href}>
-              //   {child.label}
-              // </Link>
             ))}
         </Stack>
       </Collapse>
