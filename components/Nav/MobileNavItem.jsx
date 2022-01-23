@@ -63,6 +63,7 @@ const MobileNavItem = ({ label, children, href, ToggleHam }) => {
                 py={2}
                 as={Button}
                 w="100%"
+                boxSize={8}
                 key={child.label}
                 bg="transparent"
                 onClick={() => {
@@ -78,7 +79,7 @@ const MobileNavItem = ({ label, children, href, ToggleHam }) => {
                   bg: "transparent",
                 }}
               >
-                <Text fontWeight={600}>{child.label}</Text>
+                <Text fontWeight={500}>{child.label}</Text>
               </Flex>
             ))}
         </Stack>
