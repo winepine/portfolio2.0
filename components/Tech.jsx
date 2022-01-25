@@ -1,7 +1,8 @@
 import { motion, useCycle } from "framer-motion";
-import { Text, Image } from "@chakra-ui/react";
+import { Text, Image, Box, useColorModeValue } from "@chakra-ui/react";
 const MotionText = motion(Text);
 const MotionImage = motion(Image);
+const MotionBox = motion(Box);
 const HoverBox = ({ text, imgUrl }) => {
   const [scale, cycleScale] = useCycle(0.3, 1.3);
   const [opa, cycleOpa] = useCycle(0, 1);
@@ -29,17 +30,16 @@ const HoverBox = ({ text, imgUrl }) => {
     cycleY();
   };
   return (
-    <motion.div
-      style={{
-        width: "10rem",
-        padding: "1rem",
-      }}
+    <MotionBox
+      mx={{ base: "5px", lg: "20px" }}
+      my="10px"
+      w={{ base: "6rem", lg: "10rem" }}
       onHoverEnd={() => Cycle(false)}
       onHoverStart={() => Cycle(true)}
+      onClick={() => Cycle(false)}
     >
       <MotionImage
         src={imgUrl}
-        w={150}
         borderRadius="50%"
         animate="animate"
         variants={ImgAnim}
@@ -48,15 +48,18 @@ const HoverBox = ({ text, imgUrl }) => {
         textAlign="center"
         opacity={0}
         mt={3}
-        fontWeight={100}
-        fontSize="xl"
+        fontWeight={{ base: "200", lg: "100" }}
+        fontSize={{ base: "xs", lg: "xl" }}
         animate="animate"
         variants={TextAnim}
-        color="rgba(0,0,0,0.9)"
+        color={useColorModeValue(
+          "rgba(0, 0, 0, 0.9)",
+          "rgba(255, 255, 255, 0.9)"
+        )}
       >
         {text}
       </MotionText>
-    </motion.div>
+    </MotionBox>
   );
 };
 export default HoverBox;

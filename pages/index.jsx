@@ -159,6 +159,18 @@ const Home = () => {
           </Flex>
         </Box>
       </Box>
+      <Box
+        style={{
+          left: "0",
+          bottom: "8px",
+          width: "100%",
+          color: useColorModeValue("rgba(0,0,0,1)", "rgba(255,255,255,0.7)"),
+          textAlign: "center",
+          position: "fixed",
+        }}
+      >
+        <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
+      </Box>
     </motion.div>
   );
 };
