@@ -32,7 +32,7 @@ const Frontend = () => {
           flexDirection={{ base: "column", xl: "row" }}
         >
           <MotionFlex
-            flex={13}
+            flex={1}
             flexDirection="column"
             justifyContent="center"
             flexWrap="wrap"
@@ -49,6 +49,9 @@ const Frontend = () => {
             }}
           >
             <MotionText
+              drag
+              dragSnapToOrigin
+              dragConstraints={{ left: 20, right: 20, top: 20, bottom: 20 }}
               fontFamily="Bebas Neue, cursive"
               fontSize={{ base: "5rem", lg: "14vw" }}
               ml="5vh"
