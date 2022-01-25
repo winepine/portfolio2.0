@@ -36,7 +36,7 @@ const HoverBox = ({ text, imgUrl }) => {
       w={{ base: "6rem", lg: "10rem" }}
       onHoverEnd={() => Cycle(false)}
       onHoverStart={() => Cycle(true)}
-      onClick={() => Cycle(false)}
+      onClick={() => Cycle(true)}
     >
       <MotionImage
         src={imgUrl}

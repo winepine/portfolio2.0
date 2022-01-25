@@ -96,7 +96,7 @@ const Home = () => {
           </motion.div>
         </Box>
 
-        <Box minH="100vh">
+        <Box minH="95vh">
           <Text
             textShadow={useColorModeValue(0, "2px 2px #000000")}
             fontSize={{ base: "5xl", lg: "8xl" }}
@@ -108,7 +108,7 @@ const Home = () => {
           >
             BASIT SAEED
           </Text>
-          {/* This TEXT Comp below is causing <div> inside <p> error */}
+          {/* This TEXT Comp below is causing <div> inside <p> warning */}
           <Text
             textShadow={{ base: "0", md: "1px 1px #000000" }}
             fontSize={{ base: "xl", lg: "5xl" }}
@@ -158,18 +158,18 @@ const Home = () => {
             </Button>
           </Flex>
         </Box>
-      </Box>
-      <Box
-        style={{
-          left: "0",
-          bottom: "8px",
-          width: "100%",
-          color: useColorModeValue("rgba(0,0,0,1)", "rgba(255,255,255,0.7)"),
-          textAlign: "center",
-          position: "fixed",
-        }}
-      >
-        <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
+        <Box
+          style={{
+            left: "0",
+            bottom: "8px",
+            width: "100%",
+            color: useColorModeValue("rgba(0,0,0,1)", "rgba(255,255,255,0.7)"),
+            textAlign: "center",
+            // position: "fixed",
+          }}
+        >
+          <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
+        </Box>
       </Box>
     </motion.div>
   );

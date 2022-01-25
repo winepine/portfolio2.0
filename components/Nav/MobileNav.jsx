@@ -16,7 +16,7 @@ const NAV_ITEMS = [
       {
         label: "Web Frontend",
         subLabel: "Frontend technologies",
-        href: "#",
+        href: "/skills/frontend",
       },
       {
         label: "Web Backend",

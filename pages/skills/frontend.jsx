@@ -15,7 +15,10 @@ const Frontend = () => {
       exit={{ opacity: 0 }}
     >
       <Box pt="5rem" minHeight="95vh">
-        <Flex mt="10vh" borderRadius={20}>
+        <Flex
+          mt={{ base: "0", md: "10vh" }}
+          flexDirection={{ base: "column", xl: "row" }}
+        >
           <MotioxFlex
             flex={13}
             flexDirection="column"
@@ -24,7 +27,7 @@ const Frontend = () => {
           >
             <MotioxText
               fontFamily="Bebas Neue, cursive"
-              fontSize="14vw"
+              fontSize={{ base: "5rem", lg: "14vw" }}
               ml="5vh"
               mt="5vh"
               fontWeight={800}
@@ -33,7 +36,7 @@ const Frontend = () => {
             </MotioxText>
             <Text
               fontFamily="Bebas Neue, cursive"
-              fontSize="5vw"
+              fontSize={{ base: "2rem", lg: "5vw" }}
               ml="5vh"
               transform="translateY(-6vw)"
               fontWeight={400}
@@ -42,7 +45,7 @@ const Frontend = () => {
             </Text>
           </MotioxFlex>
           <Flex flex={1}></Flex>
-          <Flex flex={17} flexWrap="wrap">
+          <Flex flex={17} justifyContent="center" flexWrap="wrap">
             <Tech text="HTML" imgUrl="/html.png" />
             <Tech text="CSS" imgUrl="/css.png" />
             <Tech text="JavaScript" imgUrl="/js.png" />
