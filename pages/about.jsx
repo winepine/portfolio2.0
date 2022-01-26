@@ -8,21 +8,48 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+// ------
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 const MotionImage = motion(Image);
+const MotionText = motion(Text);
+const container = {
+  init: {
+    opacity: 0,
+  },
+  anim: { opacity: 1, transition: { duration: 0.3 } },
+  leave: { opacity: 0, transition: { duration: 0.3 } },
+};
+const childanims = {
+  init: {
+    y: "100%",
+  },
+  anim: {
+    y: "0%",
+    transition: { duration: 0.4 },
+  },
+  leave: { y: "100%", transition: { duration: 0.4 } },
+};
+const childanimsAlt = {
+  init: {
+    y: "-100%",
+  },
+  anim: {
+    y: "0%",
+    transition: { duration: 0.5 },
+  },
+  leave: { y: "-100%", transition: { duration: 0.5 } },
+};
+// Default Export
 const About = () => {
   const [hasCopied, setCopied] = useState(false);
   const [copied, cycleCopied] = useCycle("Click To Copy", "Email Copied!");
   const [text, cycleText] = useCycle(copied, "Email : basitsaeed1@gmail.com");
   useEffect(cycleText, [copied]);
   const buttonbg = useColorModeValue("rgba(233,30,99,0.8)", "pink.500");
+  // ------
   return (
-    <MotionBox
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.2 } }}
-      exit={{ opacity: 0, transition: { duration: 0.2 } }}
-    >
+    <MotionBox variants={container} initial="init" animate="anim" exit="leave">
       <Flex
         position="fixed"
         zIndex={-1}
@@ -30,17 +57,22 @@ const About = () => {
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
+        overflow="hidden"
       >
-        <Flex>
-          <Text
+        <Flex overflow="hidden">
+          <MotionText
+            variants={childanims}
             fontFamily="Bebas Neue, cursive"
             marginTop={{ base: "16vh", md: "20vh" }}
             fontWeight={700}
             fontSize={{ base: "5xl", md: "9xl" }}
+            display="inline-block"
           >
             About
-          </Text>
-          <Text
+          </MotionText>
+          <MotionText
+            display="inline-block"
+            variants={childanims}
             fontFamily="Bebas Neue, cursive"
             marginTop={{ base: "16vh", md: "20vh" }}
             fontWeight={700}
@@ -48,9 +80,11 @@ const About = () => {
             color={useColorModeValue("rgba(233,30,99,0.8)", "pink.500")}
           >
             Me
-          </Text>
+          </MotionText>
         </Flex>
-        <Text
+        <MotionText
+          variants={childanims}
+          display="inline-block"
           w={{ base: "20rem", md: "40rem" }}
           textAlign="center"
           opacity="0.8"
@@ -59,8 +93,10 @@ const About = () => {
           I&apos;m a 3rd Year Computer Science Student practicing frontend
           design and building apps with React and NextJS since 2020. Currently
           Working on my backend skills.
-        </Text>
-        <Text
+        </MotionText>
+        <MotionText
+          display="inline"
+          variants={childanimsAlt}
           w={{ base: "20rem", md: "40rem" }}
           textAlign="center"
           marginTop="5vh"
@@ -68,7 +104,7 @@ const About = () => {
           color={useColorModeValue("rgba(233,30,99,0.8)", "pink.500")}
         >
           Open To Work For React/NextJS Roles
-        </Text>
+        </MotionText>
         <Flex>
           <a
             href="https://github.com/winepine"
@@ -114,7 +150,8 @@ const About = () => {
         >
           {text}
         </MotionButton>
-        <Text
+        <MotionText
+          variants={childanims}
           opacity="0.8"
           marginTop="5vh"
           textAlign="center"
@@ -124,7 +161,7 @@ const About = () => {
           fontFamily="Poppins"
         >
           Website Built With NextJS · ChakraUI · Framer Motion · Vercel
-        </Text>
+        </MotionText>
       </Flex>
       <Box
         left={0}
@@ -140,71 +177,3 @@ const About = () => {
   );
 };
 export default About;
-/**
- * 
- * import React from "react";
-import { motion } from "framer-motion";
-
-// Map API "type" vaules to JSX tag names
-const tagMap = {
-  paragraph: "p",
-  heading1: "h1",
-  heading2: "h2"
-};
-
-// AnimatedCharacters
-// Handles the deconstruction of each word and character to setup for the
-// individual character animations
-const AnimatedCharacters = (props) => {
-  // Framer Motion variant object, for controlling animation
-  const item = {
-    hidden: {
-      y: "100%",
-      color: "#0055FF",
-      transition: { duration: 0.2 }
-    },
-    visible: {
-      y: "0%",
-      color: "#FF0088",
-      transition: { duration: 0.3 }
-    }
-  };
-  const Tag = tagMap[props.type];
-
-  return (
-    <Tag>
-      <span
-        style={{
-          overflow: "hidden",
-          display: "inline-block"
-        }}
-      >
-        <motion.span
-          style={{ overflow: "hidden", display: "inline-block" }}
-          variants={item}
-        >
-          {props.text}
-        </motion.span>
-      </span>
-    </Tag>
-  );
-};
-
-export default AnimatedCharacters;
-------------
- const placeholderText = [
-    { type: "heading1", text: "FramerMotion" },
-    {
-      type: "heading2",
-      text: "Animating responsive text!"
-    }
-  ];
-
-  const container = {
-    visible: {
-      transition: {
-        staggerChildren: 0.5
-      }
-    }
-  };
- */
