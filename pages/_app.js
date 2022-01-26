@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps, router }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;800&display=swap"
           rel="stylesheet"
         />
       </Head>

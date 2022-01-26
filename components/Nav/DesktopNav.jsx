@@ -30,13 +30,13 @@ const NAV_ITEMS = [
         href: "/skills/frontend",
       },
       {
-        label: "Web Backend",
-        subLabel: "Backend technologies",
+        label: "Backend & DB",
+        subLabel: "Databases & API",
         href: "/skills/backend",
       },
       {
-        label: "Database & Cloud",
-        subLabel: "Databases and deployment technologies",
+        label: "Cloud",
+        subLabel: "DevOps & Cloud",
         href: "/skills/dbnc",
       },
     ],

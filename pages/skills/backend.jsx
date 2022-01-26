@@ -23,26 +23,26 @@ const childanims = {
     opacity: 1,
   },
 };
-const Frontend = () => {
+const Backend = () => {
   return (
     <MotionBox>
       <Box
-        overflow="hidden"
         zIndex="-1"
+        overflow="hidden"
         position="absolute"
         pt="5rem"
         minHeight="95vh"
       >
         <Flex
           mt={{ base: "0", md: "10vh" }}
-          flexDirection={{ base: "column", xl: "row" }}
+          flexDirection={{ base: "column", xl: "row-reverse" }}
         >
           <MotionFlex
             flex={1}
             flexDirection="column"
             justifyContent="center"
             flexWrap="wrap"
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: 200 }}
             animate={{
               opacity: 1,
               x: 0,
@@ -50,7 +50,7 @@ const Frontend = () => {
             }}
             exit={{
               opacity: 0,
-              x: -200,
+              x: 200,
               transition: { duration: 0.5, type: "spring", stiffness: 50 },
             }}
           >
@@ -60,16 +60,18 @@ const Frontend = () => {
               dragConstraints={{ left: 20, right: 20, top: 20, bottom: 20 }}
               fontFamily="Bebas Neue, cursive"
               fontSize={{ base: "5rem", lg: "14vw" }}
-              ml="5vh"
+              mr={{ base: "0", xl: "5vh" }}
+              ml={{ base: "5vh", xl: "0" }}
               mt="5vh"
               fontWeight={800}
             >
-              FRONTEND
+              BACKEND
             </MotionText>
             <MotionText
               fontFamily="Bebas Neue, cursive"
               fontSize={{ base: "2rem", lg: "5vw" }}
-              ml="5vh"
+              mr={{ base: "0", xl: "5vh" }}
+              ml={{ base: "5vh", xl: "0" }}
               transform="translateY(-6vw)"
               color={useColorModeValue("rgba(233,30,99,0.8)", "pink.500")}
               fontWeight={400}
@@ -104,30 +106,25 @@ const Frontend = () => {
             justifyContent="center"
             flexWrap="wrap"
           >
-            <Tech text="HTML" imgUrl="/html.png" />
-            <Tech text="CSS" imgUrl="/css.png" />
-            <Tech text="JavaScript" imgUrl="/js.png" />
-            <Tech text="ReactJS" imgUrl="/react.png" />
-            <Tech text="Chakra UI" imgUrl="/chakra.png" />
-            <Tech text="Redux" imgUrl="/Redux-01.svg" />
-            <Tech text="NextJS" imgUrl="/next2js - Copy.png" />
-            <Tech text="Framer motion" imgUrl="/framer.svg" />
-            <Tech text="React Router" imgUrl="/router.jpg" />
-            <Tech text="React Spring" imgUrl="/spring.png" />
+            <Tech text="NodeJS" imgUrl="/node.png" />
+            <Tech text="Express" imgUrl="/express.png" />
+            <Tech text="MongoDB" imgUrl="/mongo.png" />
+            <Tech text="Mongoose" imgUrl="/mongoose.jpg" />
+            <Tech text="JSON Web Token" imgUrl="/jwt.png" />
           </MotionFlex>
         </Flex>
-        <Box
-          left={0}
-          bottom="8px"
-          w="100%"
-          color={useColorModeValue("rgba(0,0,0,1)", "rgba(255,255,255,0.7)")}
-          textAlign="center"
-          // position="fixed"
-        >
-          <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
-        </Box>
+      </Box>
+      <Box
+        left={0}
+        position="fixed"
+        bottom="8px"
+        w="100%"
+        color={useColorModeValue("rgba(0,0,0,1)", "rgba(255,255,255,0.7)")}
+        textAlign="center"
+      >
+        <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
       </Box>
     </MotionBox>
   );
 };
-export default Frontend;
+export default Backend;

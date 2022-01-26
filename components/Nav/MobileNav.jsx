@@ -19,14 +19,14 @@ const NAV_ITEMS = [
         href: "/skills/frontend",
       },
       {
-        label: "Web Backend",
+        label: "Backend & Database",
         subLabel: "Backend technologies",
-        href: "#",
+        href: "/skills/backend",
       },
       {
-        label: "Database & Cloud",
+        label: "Cloud",
         subLabel: "Databases and deployment technologies",
-        href: "#",
+        href: "/skills/dbnc",
       },
     ],
   },
