@@ -11,6 +11,7 @@ import Typewriter from "typewriter-effect";
 import { useState, useEffect } from "react";
 import { useSpring, animated, config } from "react-spring";
 import Head from "next/head";
+import Router from "next/router";
 import { motion } from "framer-motion";
 const spin = keyframes`
   from { transform: rotate(0deg); }
@@ -122,7 +123,7 @@ const Home = () => {
                 delay: "50",
                 deleteSpeed: "30",
               }}
-              onInit={(typewriter) => {
+              onInit={typewriter => {
                 typewriter
                   .typeString("I'm A Computer Scientist")
                   .pauseFor(1000)
@@ -153,6 +154,7 @@ const Home = () => {
               ml={{ base: "4vw", lg: "1vw" }}
               w={{ base: "90vw", lg: "15vw" }}
               mt="2vh"
+              onClick={() => Router.push("/about")}
             >
               Contact Me
             </Button>
