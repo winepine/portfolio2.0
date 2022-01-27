@@ -43,7 +43,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Education & Certifications",
-    href: "#",
+    href: "/education",
   },
   {
     label: "Projects",
@@ -61,7 +61,7 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={"row"} spacing={8}>
-      {NAV_ITEMS.map((navItem) => (
+      {NAV_ITEMS.map(navItem => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"auto"}>
             <PopoverTrigger>
@@ -94,7 +94,7 @@ const DesktopNav = () => {
                 minW={"sm"}
               >
                 <Stack>
-                  {navItem.children.map((child) => (
+                  {navItem.children.map(child => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
                 </Stack>

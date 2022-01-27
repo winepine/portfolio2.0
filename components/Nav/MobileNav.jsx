@@ -32,7 +32,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Education & Certifications",
-    href: "#",
+    href: "/education",
   },
   {
     label: "Projects",
@@ -50,7 +50,7 @@ const MobileNav = ({ ToggleHam }) => {
       p={4}
       display={{ md: "none" }}
     >
-      {NAV_ITEMS.map((navItem) => (
+      {NAV_ITEMS.map(navItem => (
         <MobileNavItem ToggleHam={ToggleHam} key={navItem.label} {...navItem} />
       ))}
     </Stack>
