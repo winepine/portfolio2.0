@@ -8,6 +8,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 // ------
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -23,22 +24,42 @@ const container = {
 const childanims = {
   init: {
     y: "100%",
+    opacity: 0,
   },
   anim: {
     y: "0%",
-    transition: { duration: 0.4 },
+    opacity: [0, 0, 1],
+    transition: {
+      duration: 0.5,
+    },
   },
-  leave: { y: "100%", transition: { duration: 0.4 } },
+  leave: {
+    y: "100%",
+    opacity: [1, 0, 0],
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 const childanimsAlt = {
   init: {
-    y: "-100%",
+    y: "100%",
+    opacity: 0,
   },
   anim: {
     y: "0%",
-    transition: { duration: 0.5 },
+    opacity: [0, 0, 1],
+    transition: {
+      duration: 0.5,
+    },
   },
-  leave: { y: "-100%", transition: { duration: 0.5 } },
+  leave: {
+    y: "100%",
+    opacity: [1, 0, 0],
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 // Default Export
 const About = () => {
@@ -50,6 +71,10 @@ const About = () => {
   // ------
   return (
     <MotionBox variants={container} initial="init" animate="anim" exit="leave">
+      <Head>
+        <title>About Me</title>
+        <link rel="icon" href="/logo.svg" type="image/icon type" />
+      </Head>
       <Flex
         position="fixed"
         zIndex={-1}
@@ -114,6 +139,7 @@ const About = () => {
             <MotionImage
               whileHover={{ scale: 1.1, opacity: 1 }}
               width="80px"
+              variants={childanims}
               opacity="0.8"
               src="/git.svg"
             />
@@ -124,6 +150,7 @@ const About = () => {
             rel="noreferrer"
           >
             <MotionImage
+              variants={childanimsAlt}
               whileHover={{ scale: 1.1, opacity: 1 }}
               width="80px"
               opacity="0.8"
@@ -142,6 +169,7 @@ const About = () => {
               cycleCopied();
             }
           }}
+          variants={childanims}
           _hover={!hasCopied && { color: "pink.400", bg: "gray.700" }}
           color={!hasCopied ? "rgba(255,255,255,0.9)" : "pink.400"}
           bg={!hasCopied ? buttonbg : "gray.700"}

@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
 const MotionDivider = motion(Divider);
+import Head from "next/head";
 const anims = {
   init: {
     y: "100%",
@@ -34,6 +35,10 @@ const anims = {
 export default function Education() {
   return (
     <Box position="relative" zIndex="-1">
+      <Head>
+        <title>Education</title>
+        <link rel="icon" href="/logo.svg" type="image/icon type" />
+      </Head>
       <MotionBox pt="15vh" overflow="hidden">
         <Flex ml="5vw" flexDirection="column">
           <Flex justifyContent="left" flexDirection="row">
@@ -45,7 +50,7 @@ export default function Education() {
               fontFamily="Bebas Neue"
               fontSize={{ base: "4xl", md: "6xl" }}
             >
-              No Prior Work&nbsp;
+              Work&nbsp;
             </MotionText>
             <MotionText
               initial="init"
@@ -57,6 +62,44 @@ export default function Education() {
               color={useColorModeValue("rgba(233,30,99,0.8)", "pink.500")}
             >
               Experience
+            </MotionText>
+          </Flex>
+          <Flex
+            // mt="5vh"
+            justifyContent="left"
+            flexDirection={{ base: "row", md: "row" }}
+          >
+            <MotionText
+              initial="init"
+              animate="anim"
+              exit="exit"
+              variants={anims}
+              fontFamily="Bebas Neue"
+              fontSize={{ base: "2xl", md: "4xl" }}
+            >
+              TEACHING ASSISTANT&nbsp;
+            </MotionText>
+            <MotionText
+              initial="init"
+              animate="anim"
+              exit="exit"
+              variants={anims}
+              fontFamily="Bebas Neue"
+              fontSize={{ base: "2xl", md: "4xl" }}
+              color={useColorModeValue("rgba(233,30,99,0.8)", "pink.500")}
+            >
+              AT NUCES&nbsp;
+              <Tag
+                initial="init"
+                animate="anim"
+                exit="exit"
+                variants={anims}
+                colorScheme="pink"
+                // fontFamily="Bebas Neue"
+                fontSize={{ base: "xl", md: "3xl" }}
+              >
+                Aug 2021 - Present
+              </Tag>
             </MotionText>
           </Flex>
           <MotionDivider

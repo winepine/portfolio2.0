@@ -1,6 +1,7 @@
 import { Box, Text, Flex, Button, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Router from "next/router";
+import Head from "next/head";
 const MotionBox = motion(Box);
 export default function Cloud() {
   return (
@@ -9,6 +10,10 @@ export default function Cloud() {
       animate={{ opacity: 1, transition: { duration: 0.2 } }}
       exit={{ opacity: 0, transition: { duration: 0.2 } }}
     >
+      <Head>
+        <title>Cloud Skills</title>
+        <link rel="icon" href="/logo.svg" type="image/icon type" />
+      </Head>
       <Flex justifyContent="center" alignItems="center" flexDirection="column">
         <Text
           fontFamily="Bebas Neue, cursive"
@@ -17,7 +22,7 @@ export default function Cloud() {
           fontWeight={700}
           textAlign="center"
         >
-          Haven&apos;t Tipped My Toe In This Paradigm
+          Haven&apos;t Tipped My Toe In This Paradigm YET
         </Text>
         <Button
           _hover={{ color: "pink.400", bg: "gray.700" }}

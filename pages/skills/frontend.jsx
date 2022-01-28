@@ -1,31 +1,17 @@
 import { Box, Text, Flex, useColorModeValue } from "@chakra-ui/react";
 import Tech from "../../components/Tech";
 import { motion } from "framer-motion";
+import Head from "next/head";
 const MotionFlex = motion(Flex);
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
-const container = {
-  init: {
-    opacity: 0,
-  },
-  anim: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-    },
-  },
-};
-const childanims = {
-  init: {
-    opacity: 0,
-  },
-  anim: {
-    opacity: 1,
-  },
-};
 const Frontend = () => {
   return (
     <MotionBox>
+      <Head>
+        <title>Frontend Skills</title>
+        <link rel="icon" href="/logo.svg" type="image/icon type" />
+      </Head>
       <Box
         overflow="hidden"
         zIndex="-1"
@@ -46,12 +32,12 @@ const Frontend = () => {
             animate={{
               opacity: 1,
               x: 0,
-              transition: { duration: 0.5, type: "spring", stiffness: 50 },
+              transition: { duration: 0.4, type: "spring", stiffness: 50 },
             }}
             exit={{
               opacity: 0,
               x: -200,
-              transition: { duration: 0.5, type: "spring", stiffness: 50 },
+              transition: { duration: 0.3, type: "spring", stiffness: 50 },
             }}
           >
             <MotionText
@@ -84,8 +70,8 @@ const Frontend = () => {
               opacity: 1,
               y: 0,
               transition: {
-                delay: 0.3,
-                duration: 0.5,
+                delay: 0.2,
+                duration: 0.4,
                 type: "spring",
                 stiffness: 50,
               },
@@ -94,8 +80,8 @@ const Frontend = () => {
               opacity: 0,
               y: 100,
               transition: {
-                duration: 0.5,
-                delay: 0.2,
+                duration: 0.3,
+                delay: 0.1,
                 type: "spring",
                 stiffness: 50,
               },
