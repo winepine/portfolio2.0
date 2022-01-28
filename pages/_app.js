@@ -1,9 +1,9 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
 import theme from "../components/theme";
-import { motion, AnimatePresence } from "framer-motion";
-import Nav from "../components/Nav/Nav";
+import { AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout";
+import "../styles/globals.css";
 function MyApp({ Component, pageProps, router }) {
   return (
     <ChakraProvider theme={theme}>
@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps, router }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200;400;500;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Bebas+Neue&family=Poppins:wght@200;400;500;800&display=swap"
           rel="stylesheet"
         />
       </Head>

@@ -22,7 +22,7 @@ const NAV_ITEMS = [
       {
         label: "All Technologies",
         subLabel: "Languages/Tools/Technologies",
-        href: "/skills/all",
+        href: "/skills",
       },
       {
         label: "Web Frontend",
@@ -47,7 +47,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Projects",
-    href: "/",
+    href: "/projects",
   },
   {
     label: "About",
@@ -61,7 +61,7 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={"row"} spacing={8}>
-      {NAV_ITEMS.map(navItem => (
+      {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"auto"}>
             <PopoverTrigger>
@@ -94,7 +94,7 @@ const DesktopNav = () => {
                 minW={"sm"}
               >
                 <Stack>
-                  {navItem.children.map(child => (
+                  {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
                 </Stack>

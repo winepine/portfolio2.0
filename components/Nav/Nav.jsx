@@ -20,7 +20,7 @@ export default React.memo(function WithSubnavigation() {
     console.log("rendered...");
   }, []);
   return (
-    <Box position="fixed" minWidth="100vw">
+    <Box position="fixed" minWidth="100vw" zIndex={2}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}

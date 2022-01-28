@@ -11,7 +11,7 @@ const NAV_ITEMS = [
       {
         label: "All Technologies",
         subLabel: "Languages/Tools/Technologies",
-        href: "#",
+        href: "/skills",
       },
       {
         label: "Web Frontend",
@@ -36,7 +36,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Projects",
-    href: "/",
+    href: "/projects",
   },
   {
     label: "About",
@@ -50,7 +50,7 @@ const MobileNav = ({ ToggleHam }) => {
       p={4}
       display={{ md: "none" }}
     >
-      {NAV_ITEMS.map(navItem => (
+      {NAV_ITEMS.map((navItem) => (
         <MobileNavItem ToggleHam={ToggleHam} key={navItem.label} {...navItem} />
       ))}
     </Stack>
