@@ -64,8 +64,8 @@ const childanimsAlt = {
 // Default Export
 const About = () => {
   const [hasCopied, setCopied] = useState(false);
-  const [copied, cycleCopied] = useCycle("Click To Copy", "Email Copied!");
-  const [text, cycleText] = useCycle(copied, "Email : basitsaeed1@gmail.com");
+  const [copied, cycleCopied] = useCycle("Click!", "Email Copied!");
+  const [text, cycleText] = useCycle(copied, "Click/Tap Here To Copy My Email");
   useEffect(cycleText, [copied]);
   const buttonbg = useColorModeValue("rgba(233,30,99,0.8)", "pink.500");
   // ------
