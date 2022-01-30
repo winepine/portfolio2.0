@@ -7,6 +7,7 @@ import {
   UnorderedList,
   ListItem,
   Button,
+  Divider,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -14,6 +15,7 @@ import Head from "next/head";
 const MotionText = motion(Text);
 const MotionImage = motion(Image);
 const MotionFlex = motion(Flex);
+const MotionDivider = motion(Divider);
 const anims = {
   init: { opacity: 0 },
   anim: { opacity: 1, transition: { duration: 0.5 } },
@@ -89,6 +91,29 @@ export default function Projects() {
             &nbsp;Journey In 2019
           </MotionText>
         </Flex>
+        <MotionDivider
+          initial={{ width: "0%" }}
+          animate={{ width: "90%", transition: { duration: 0.5 } }}
+          exit={{ width: "0%", transition: { duration: 0.5 } }}
+          bg="pink.500"
+          h="2px"
+        />
+        <MotionText
+          initial="init"
+          animate="anim"
+          exit="exit"
+          w="70vw"
+          variants={anims}
+          textAlign="center"
+          color="pink.700"
+          fontSize={{ base: "xl", md: "5xl" }}
+          fontFamily="Bebas Neue"
+          fontWeight={500}
+        >
+          Since then, I&lsquo;ve Developed a few Applications For Different
+          Platforms And Learnt a lot along the way. Scroll To View Some of
+          them...
+        </MotionText>
         <MotionFlex
           initial={{ y: -20, opacity: 0 }}
           animate={{
@@ -102,7 +127,7 @@ export default function Projects() {
           }}
           flexDirection="column"
           alignItems="center"
-          mt="20vh"
+          mt="10vh"
         >
           <Image
             src="/icons8-down-50.png"
@@ -123,23 +148,29 @@ export default function Projects() {
         minHeight="80vh"
         pt="20vh"
         overflow="hidden"
+        flexDirection={{ base: "column-reverse", md: "row" }}
+        alignItems="center"
         justifyContent="space-around"
       >
         <MotionFlex
+          flexDirection={{ base: "column", md: "row" }}
           viewport={{ once: true }}
+          alignItems="center"
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-          flexDirection="column"
         >
           <Flex>
-            <Text fontFamily="Bebas Neue" fontWeight={700} fontSize="8xl">
-              {" "}
+            <Text
+              fontFamily="Bebas Neue"
+              fontWeight={700}
+              fontSize={{ base: "4xl", md: "8xl" }}
+            >
               XAXIS
             </Text>
             <Text
               fontFamily="Bebas Neue"
               fontWeight={700}
-              fontSize="8xl"
+              fontSize={{ base: "4xl", md: "8xl" }}
               color="pink.500"
             >
               {" "}
@@ -152,12 +183,12 @@ export default function Projects() {
           <Text
             fontFamily="Bebas Neue"
             fontWeight={500}
-            fontSize="4xl"
+            fontSize={{ base: "2xl", md: "4xl" }}
             // color="pink.500"
           >
             C/Bash
           </Text>
-          <UnorderedList fontFamily="Poppins">
+          <UnorderedList w={{ base: "90vw", md: "45vw" }} fontFamily="Poppins">
             <ListItem>
               Developed the entire backend for this project for ram and cores
               utilization using Linux commands.
@@ -206,7 +237,7 @@ export default function Projects() {
           // borderRadius="4%"
           opacity="0.9"
           objectFit="contain"
-          w={{ base: "30vw" }}
+          w={{ base: "90vw", md: "30vw" }}
           height={{ base: "9%" }}
         />
       </Flex>
@@ -216,6 +247,8 @@ export default function Projects() {
       <Flex
         minHeight="100vh"
         pt="20vh"
+        flexDirection={{ base: "column", md: "row" }}
+        alignItems="center"
         overflow="hidden"
         justifyContent="space-around"
       >
@@ -236,7 +269,7 @@ export default function Projects() {
             borderRadius="1%"
             opacity="0.9"
             objectFit="contain"
-            w={{ base: "30vw" }}
+            w={{ base: "90vw", md: "30vw" }}
             // height={{ base: "9%" }}
           />
           <Flex justifyContent="space-between">
@@ -249,6 +282,7 @@ export default function Projects() {
               objectFit="contain"
               mt="1vh"
               w={{ base: "20vw" }}
+              display={{ base: "none", md: "block" }}
               // height={{ base: "9%" }}
             />
             <MotionImage
@@ -257,6 +291,7 @@ export default function Projects() {
               whileHover={{ scale: 1.3, opacity: 1 }}
               borderRadius="1%"
               opacity="0.9"
+              display={{ base: "none", md: "block" }}
               objectFit="contain"
               mt="1vh"
               ml="1vw"
@@ -269,33 +304,41 @@ export default function Projects() {
           viewport={{ once: true }}
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+          alignItems={{ base: "center", md: "left" }}
           flexDirection="column"
         >
           <Flex>
-            <Text fontFamily="Bebas Neue" fontWeight={700} fontSize="8xl">
+            <Text
+              fontFamily="Bebas Neue"
+              fontWeight={700}
+              fontSize={{ base: "4xl", md: "8xl" }}
+            >
               {" "}
               FYWEB
             </Text>
             <Text
               fontFamily="Bebas Neue"
               fontWeight={700}
-              fontSize="8xl"
+              fontSize={{ base: "4xl", md: "8xl" }}
               color="pink.500"
             >
               {" "}
               &nbsp;Ecommerce Store
             </Text>
           </Flex>
+          <Text color="pink.500" fontFamily="Poppins">
+            Group Project
+          </Text>
           <Text
             fontFamily="Bebas Neue"
             fontWeight={500}
-            fontSize="4xl"
+            fontSize={{ base: "2xl", md: "4xl" }}
             // color="pink.500"
           >
             {" "}
             Express/MongoDB/React
           </Text>
-          <UnorderedList fontFamily="Poppins">
+          <UnorderedList w={{ base: "85vw", md: "40vw" }} fontFamily="Poppins">
             <ListItem>
               Developed logic for visualization of sorting algorithms in React
               by using async functions and promises.
@@ -337,23 +380,30 @@ export default function Projects() {
         pt="20vh"
         overflow="hidden"
         justifyContent="space-around"
+        flexDirection={{ base: "column-reverse", md: "row" }}
         flexWrap="wrap"
+        alignItems="center"
       >
         <MotionFlex
           viewport={{ once: true }}
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
           flexDirection="column"
+          alignItems="center"
         >
           <Flex>
-            <Text fontFamily="Bebas Neue" fontWeight={700} fontSize="8xl">
+            <Text
+              fontFamily="Bebas Neue"
+              fontWeight={700}
+              fontSize={{ base: "4xl", md: "8xl" }}
+            >
               {" "}
               Sorting Algo
             </Text>
             <Text
               fontFamily="Bebas Neue"
               fontWeight={700}
-              fontSize="8xl"
+              fontSize={{ base: "4xl", md: "8xl" }}
               color="pink.500"
             >
               {" "}
@@ -363,21 +413,21 @@ export default function Projects() {
           <Text
             fontFamily="Bebas Neue"
             fontWeight={500}
-            fontSize="4xl"
+            fontSize={{ base: "2xl", md: "4xl" }}
             // color="pink.500"
           >
             {" "}
             ReactJS
           </Text>
-          <UnorderedList fontFamily="Poppins">
+          <UnorderedList w={{ base: "90vw", md: "40vw" }} fontFamily="Poppins">
             <ListItem>
               Developed logic for visualization of sorting algorithms in React
               by using async functions and promises.
             </ListItem>
             <ListItem>
               Designed UI in a such a way that transitions feel smooth and give
-              project a modern look and feel
-              <br /> compared to other online visualization tools.
+              project a modern look and feel compared to other online
+              visualization tools.
             </ListItem>
             <ListItem>Concepts Used: Classes, Async Await, Promises</ListItem>
           </UnorderedList>
@@ -420,7 +470,7 @@ export default function Projects() {
           borderRadius="1%"
           opacity="0.9"
           objectFit="contain"
-          w={{ base: "30vw" }}
+          w={{ base: "90vw", md: "30vw" }}
           height={{ base: "9%" }}
         />
       </Flex>
@@ -432,6 +482,8 @@ export default function Projects() {
         pt="20vh"
         overflow="hidden"
         justifyContent="space-around"
+        flexDirection={{ base: "column", md: "row" }}
+        alignItems="center"
       >
         <MotionImage
           viewport={{ once: true }}
@@ -447,7 +499,7 @@ export default function Projects() {
           whileHover={{ scale: 1.3 }}
           opacity="0.9"
           objectFit="contain"
-          w={{ base: "30vw" }}
+          w={{ base: "90vw", md: "30vw" }}
           height={{ base: "9%" }}
         />
         <MotionFlex
@@ -455,23 +507,27 @@ export default function Projects() {
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
           flexDirection="column"
+          alignItems="center"
         >
           <Flex>
-            <Text fontFamily="Bebas Neue" fontWeight={700} fontSize="8xl">
-              {" "}
+            <Text
+              fontFamily="Bebas Neue"
+              fontWeight={700}
+              fontSize={{ base: "4xl", md: "8xl" }}
+            >
               HANGMAN
             </Text>
           </Flex>
           <Text
             fontFamily="Bebas Neue"
             fontWeight={500}
-            fontSize="4xl"
+            fontSize={{ base: "2xl", md: "4xl" }}
             // color="pink.500"
           >
             {" "}
             Bash Script/GTK
           </Text>
-          <UnorderedList fontFamily="Poppins">
+          <UnorderedList w={{ base: "90vw", md: "35vw" }} fontFamily="Poppins">
             <ListItem>
               Developed entire frontend from start to finish using a bash
               library called GTKDialog.
@@ -506,7 +562,12 @@ export default function Projects() {
           </Flex>
         </MotionFlex>
       </Flex>
-      <Flex h="12vh" alignItems="center" flexDirection="column">
+      <Flex
+        mt={{ base: "5vh" }}
+        h="12vh"
+        alignItems="center"
+        flexDirection="column"
+      >
         <MotionImage
           onClick={() =>
             top.current.scrollIntoView({

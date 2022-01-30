@@ -5,20 +5,18 @@ import Head from "next/head";
 const MotionFlex = motion(Flex);
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
-const Backend = () => {
+const Backend = ({ landing }) => {
+  const footerColor = useColorModeValue(
+    "rgba(0,0,0,1)",
+    "rgba(255,255,255,0.7)"
+  );
   return (
     <MotionBox>
       <Head>
         <title>Backend Skills</title>
         <link rel="icon" href="/logo.svg" type="image/icon type" />
       </Head>
-      <Box
-        zIndex="-1"
-        overflow="hidden"
-        position="absolute"
-        pt="5rem"
-        minHeight="95vh"
-      >
+      <Box overflow="hidden" position="relative" pt="5rem" minHeight="95vh">
         <Flex
           mt={{ base: "0", md: "10vh" }}
           flexDirection={{ base: "column", xl: "row-reverse" }}
@@ -100,17 +98,22 @@ const Backend = () => {
           </MotionFlex>
         </Flex>
       </Box>
-      <Box
-        left={0}
-        position="fixed"
-        bottom="8px"
-        w="100%"
-        color={useColorModeValue("rgba(0,0,0,1)", "rgba(255,255,255,0.7)")}
-        textAlign="center"
-      >
-        <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
-      </Box>
+      {landing && (
+        <Box
+          left={0}
+          position="relative"
+          bottom="8px"
+          w="100%"
+          color={footerColor}
+          textAlign="center"
+        >
+          <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
+        </Box>
+      )}
     </MotionBox>
   );
+};
+Backend.defaultProps = {
+  landing: true,
 };
 export default Backend;

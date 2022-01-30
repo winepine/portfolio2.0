@@ -31,7 +31,7 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Education & Certifications",
+    label: "Experience & Education",
     href: "/education",
   },
   {

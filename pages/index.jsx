@@ -123,7 +123,7 @@ const Home = () => {
                 delay: "50",
                 deleteSpeed: "30",
               }}
-              onInit={typewriter => {
+              onInit={(typewriter) => {
                 typewriter
                   .typeString("I'm A Computer Scientist")
                   .pauseFor(1000)
@@ -143,6 +143,7 @@ const Home = () => {
               ml={{ base: "4vw", lg: "12vw" }}
               w={{ base: "90vw", lg: "18vw" }}
               mt="2vh"
+              onClick={() => Router.push("/skills")}
             >
               Learn More About Skills
             </Button>

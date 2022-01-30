@@ -5,20 +5,18 @@ import Head from "next/head";
 const MotionFlex = motion(Flex);
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
-const Frontend = () => {
+const Frontend = ({ landing }) => {
+  const footerColor = useColorModeValue(
+    "rgba(0,0,0,1)",
+    "rgba(255,255,255,0.7)"
+  );
   return (
     <MotionBox>
       <Head>
         <title>Frontend Skills</title>
         <link rel="icon" href="/logo.svg" type="image/icon type" />
       </Head>
-      <Box
-        overflow="hidden"
-        zIndex="-1"
-        position="absolute"
-        pt="5rem"
-        minHeight="95vh"
-      >
+      <Box overflow="hidden" position="relative" pt="5rem" minHeight="95vh">
         <Flex
           mt={{ base: "0", md: "10vh" }}
           flexDirection={{ base: "column", xl: "row" }}
@@ -102,18 +100,25 @@ const Frontend = () => {
             <Tech text="React Spring" imgUrl="/spring.png" />
           </MotionFlex>
         </Flex>
-        <Box
-          left={0}
-          bottom="8px"
-          w="100%"
-          color={useColorModeValue("rgba(0,0,0,1)", "rgba(255,255,255,0.7)")}
-          textAlign="center"
-          // position="fixed"
-        >
-          <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
-        </Box>
+        {landing && (
+          <Box
+            left={0}
+            bottom="8px"
+            w="100%"
+            color={footerColor}
+            textAlign="center"
+            // position="fixed"
+          >
+            <Text fontWeight={100}>
+              © 2022 Basit Saeed. All Rights Reserved.
+            </Text>
+          </Box>
+        )}
       </Box>
     </MotionBox>
   );
+};
+Frontend.defaultProps = {
+  landing: true,
 };
 export default Frontend;
