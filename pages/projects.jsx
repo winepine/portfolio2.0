@@ -206,6 +206,7 @@ export default function Projects() {
             <a
               href="https://github.com/winepine/Xaxis-An-OS-Simulation"
               target="_blank"
+              rel="noreferrer"
             >
               <Button>
                 View On Github &nbsp;&nbsp;
@@ -356,6 +357,7 @@ export default function Projects() {
             <a
               href="https://github.com/winepine/ecommercefrontend"
               target="_blank"
+              rel="noreferrer"
             >
               <Button>
                 View On Github &nbsp;&nbsp;
@@ -443,6 +445,7 @@ export default function Projects() {
             <a
               href="https://github.com/winepine/sortingvisualizer"
               target="_blank"
+              rel="noreferrer"
             >
               <Button>
                 View On Github &nbsp;&nbsp;
@@ -463,7 +466,11 @@ export default function Projects() {
                 </svg>
               </Button>
             </a>
-            <a href="https://winepine.netlify.app/" target="_blank">
+            <a
+              href="https://winepine.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button bg="pink.500" ml="10px">
                 View Live Demo
               </Button>
@@ -559,6 +566,7 @@ export default function Projects() {
             <a
               href="https://github.com/winepine/Hangman-In-Shell"
               target="_blank"
+              rel="noreferrer"
             >
               <Button>
                 View On Github &nbsp;&nbsp;
