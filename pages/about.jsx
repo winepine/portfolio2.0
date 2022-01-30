@@ -197,7 +197,7 @@ const About = () => {
         w="100%"
         color={useColorModeValue("rgba(0,0,0,1)", "rgba(255,255,255,0.7)")}
         textAlign="center"
-        position="fixed"
+        position="relative"
       >
         <Text fontWeight={100}>© 2022 Basit Saeed. All Rights Reserved.</Text>
       </Box>

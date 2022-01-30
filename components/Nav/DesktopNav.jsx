@@ -70,7 +70,7 @@ const DesktopNav = () => {
                 p={2}
                 as={Button}
                 bg="transparent"
-                onClick={() => Router.replace(navItem.href ?? "#")}
+                onClick={() => Router.push(navItem.href ?? "#")}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
