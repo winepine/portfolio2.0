@@ -237,7 +237,7 @@ export default function Projects() {
             opacity: 1,
             transition: { duration: 0.5, delay: 0.3 },
           }}
-          src="/xaxis.png"
+          src="/projectImages/xaxis.png"
           alt="project img"
           // borderRadius="4%"
           opacity="0.9"
@@ -267,7 +267,7 @@ export default function Projects() {
           flexDirection="column"
         >
           <MotionImage
-            src="/fyweb3.jpg"
+            src="/projectImages/fyweb3.jpg"
             alt="project img"
             whileHover={{ scale: 1.3, zIndex: 2, opacity: 1 }}
             borderRadius="1%"
@@ -277,7 +277,7 @@ export default function Projects() {
           />
           <Flex justifyContent="space-between">
             <MotionImage
-              src="/fyweb.png"
+              src="/projectImages/fyweb.png"
               alt="project img"
               whileHover={{ scale: 1.3, zIndex: 2, opacity: 1 }}
               borderRadius="1%"
@@ -288,7 +288,7 @@ export default function Projects() {
               display={{ base: "none", md: "block" }}
             />
             <MotionImage
-              src="/fyweb2.png"
+              src="/projectImages/fyweb2.png"
               alt="project img"
               whileHover={{ scale: 1.3, opacity: 1 }}
               borderRadius="1%"
@@ -484,7 +484,7 @@ export default function Projects() {
             opacity: 1,
             transition: { duration: 0.5, delay: 0.3 },
           }}
-          src="/sorting.png"
+          src="/projectImages/sorting.png"
           alt="project img"
           whileHover={{ scale: 1.3 }}
           border="1px pink solid"
@@ -513,7 +513,7 @@ export default function Projects() {
             opacity: 1,
             transition: { duration: 0.5, delay: 0.3 },
           }}
-          src="/hang.jpeg"
+          src="/projectImages/hang.jpeg"
           alt="project img"
           borderRadius="1%"
           whileHover={{ scale: 1.3 }}
