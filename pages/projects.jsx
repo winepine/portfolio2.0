@@ -145,8 +145,7 @@ export default function Projects() {
         //----
       }
       <Flex
-        minHeight="80vh"
-        pt="20vh"
+        minHeight="70vh"
         overflow="hidden"
         flexDirection={{ base: "column-reverse", md: "row" }}
         alignItems="center"
@@ -238,7 +237,7 @@ export default function Projects() {
             opacity: 1,
             transition: { duration: 0.5, delay: 0.3 },
           }}
-          src="/projects/xaxis.png"
+          src="/xaxis.png"
           alt="project img"
           // borderRadius="4%"
           opacity="0.9"
@@ -251,8 +250,7 @@ export default function Projects() {
         //----
       }
       <Flex
-        minHeight="100vh"
-        pt="20vh"
+        minHeight="70vh"
         flexDirection={{ base: "column", md: "row" }}
         alignItems="center"
         overflow="hidden"
@@ -344,14 +342,16 @@ export default function Projects() {
           </Text>
           <UnorderedList w={{ base: "85vw", md: "40vw" }} fontFamily="Poppins">
             <ListItem>
-              Developed logic for visualization of sorting algorithms in React
-              by using async functions and promises.
+              Built The Frontend Of Application Using ReactJS and MaterailUI.
+              Added Smooth Transitions using React Spring.
             </ListItem>
             <ListItem>
-              Designed UI in a such a way that transitions feel smooth and gave
-              project a modern look and feel.
+              Used React Context Hooks For Application State Management.
             </ListItem>
-            <ListItem>Concepts Used: Classes, Async Await, Promises</ListItem>
+            <ListItem>
+              Concepts Used: React Hooks, Axios, API Requests (GET, POST,
+              DELETE)
+            </ListItem>
           </UnorderedList>
           <Flex mt="5vh">
             <a
@@ -386,8 +386,7 @@ export default function Projects() {
         //----
       }
       <Flex
-        minHeight="90vh"
-        pt="20vh"
+        minHeight="80vh"
         overflow="hidden"
         justifyContent="space-around"
         flexDirection={{ base: "column-reverse", md: "row" }}
@@ -485,7 +484,7 @@ export default function Projects() {
             opacity: 1,
             transition: { duration: 0.5, delay: 0.3 },
           }}
-          src="/projects/sorting.png"
+          src="/sorting.png"
           alt="project img"
           whileHover={{ scale: 1.3 }}
           border="1px pink solid"
@@ -500,8 +499,7 @@ export default function Projects() {
         //----
       }
       <Flex
-        minHeight="90vh"
-        pt="20vh"
+        minHeight="80vh"
         overflow="hidden"
         justifyContent="space-around"
         flexDirection={{ base: "column", md: "row" }}
@@ -515,7 +513,7 @@ export default function Projects() {
             opacity: 1,
             transition: { duration: 0.5, delay: 0.3 },
           }}
-          src="/projects/hang.jpeg"
+          src="/hang.jpeg"
           alt="project img"
           borderRadius="1%"
           whileHover={{ scale: 1.3 }}
