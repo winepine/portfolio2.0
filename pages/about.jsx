@@ -157,6 +157,19 @@ const About = () => {
               src="/in.svg"
             />
           </a>
+          <a
+            href="https://open.spotify.com/playlist/3s1ahBnyyURWdGUjyKFjMG?si=6b0e8e34d80c4217"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MotionImage
+              variants={childanimsAlt}
+              whileHover={{ scale: 1.1, opacity: 1 }}
+              width="80px"
+              opacity="0.8"
+              src="/spotify.png"
+            />
+          </a>
         </Flex>
         <MotionButton
           onHoverStart={!hasCopied && cycleText}
